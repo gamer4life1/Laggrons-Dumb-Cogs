@@ -100,7 +100,7 @@ class Say(BaseCog):
                     exc_info=e,
                 )
 
-     @commands.command(name="say")
+    @commands.command(name="say")
 #     @checks.admin_or_permissions(administrator=True)
     async def _say(
         self, ctx: commands.Context, channel: Optional[discord.TextChannel], *, text: str = ""
