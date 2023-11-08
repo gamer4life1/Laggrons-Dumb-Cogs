@@ -91,7 +91,7 @@ class Say(commands.Cog):
             log.error("Failed to send message.", exc_info=True)
 
     @commands.command(name="say")
-    @checks.admin_or_permissions(administrator=True)
+#     @checks.admin_or_permissions(administrator=True)
     async def _say(
         self, ctx: commands.Context, channel: Optional[discord.TextChannel], *, text: str = ""
     ):
