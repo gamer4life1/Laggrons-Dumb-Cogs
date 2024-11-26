@@ -149,7 +149,7 @@ class WarnSystem(SettingsMixin, AutomodMixin, commands.Cog, metaclass=CompositeM
 
         self.task: asyncio.Task
 
-    __version__ = "1.5.6"
+    __version__ = "1.5.7"
     __author__ = ["retke (El Laggron)"]
 
     # helpers
@@ -1003,6 +1003,9 @@ class WarnSystem(SettingsMixin, AutomodMixin, commands.Cog, metaclass=CompositeM
 
     @commands.Cog.listener()
     async def on_member_remove(self, member: discord.Member):
+        if not member.guild:
+            # bot was kicked
+            return
         await self.on_manual_action(member.guild, member, 3)
 
     async def on_manual_action(self, guild: discord.Guild, member: discord.Member, level: int):
