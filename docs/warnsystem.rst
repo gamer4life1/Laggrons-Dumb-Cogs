@@ -49,7 +49,7 @@ the rewrite of the BetterMod cog for Red V3. Here is a quick start guide.
 
     All members with the moderator role will be able to use the ``[p]warn``
     command. You can set the moderator and administrator role with the ``[p]set
-    modrole`` and ``[p]set adminrole`` commands.
+    addmodrole`` and ``[p]set addadminrole`` commands.
 
 3. (Optional) Set up the mute role
 
