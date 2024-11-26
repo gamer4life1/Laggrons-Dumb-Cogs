@@ -189,7 +189,8 @@ class WarningEditionView(View):
 
     async def interaction_check(self, interaction: Interaction[discord.Client]) -> bool:
         return (
-            await mod.is_mod_or_superior(self.bot, interaction.user)
+            interaction.client == self.user
+            or await mod.is_mod_or_superior(self.bot, interaction.user)
             or interaction.user.guild_permissions.kick_members
         )
 
@@ -274,7 +275,8 @@ class WarningsSelector(Pages[menus.ListPageSource]):
 
     async def interaction_check(self, interaction: Interaction[discord.Client]) -> bool:
         return (
-            await mod.is_mod_or_superior(self.bot, interaction.user)
+            interaction.client == self.user
+            or await mod.is_mod_or_superior(self.bot, interaction.user)
             or interaction.user.guild_permissions.kick_members
         )
 
